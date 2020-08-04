@@ -38,6 +38,7 @@ export default function Post({ post, morePosts, preview }) {
                 coverImage={post.content.image}
                 date={post.first_published_at || post.published_at}
                 author={post.content.author}
+                tags={post.tag_list}
               />
               <PostBody content={post.html} />
             </article>

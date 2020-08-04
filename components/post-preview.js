@@ -10,6 +10,7 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
+  tags,
 }) {
   return (
     <div>
@@ -26,6 +27,15 @@ export default function PostPreview({
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       <Avatar name={author.name} picture={author.content.picture} />
+      <div>
+        <h4 className="text-lg leading-relaxed text-3xl">Tags: </h4>
+        {tags && tags.map((tag,index)=>{
+          if(index<tags.length-1){
+            return <span key={tag} className="text-lg leading-relaxed mb-4 ">{tag}, </span>;
+          }
+          else return <span key={tag} className="text-lg leading-relaxed mb-4 ">{tag}</span>;
+        })}
+      </div>
     </div>
   )
 }
